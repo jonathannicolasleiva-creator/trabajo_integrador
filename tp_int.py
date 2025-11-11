@@ -26,7 +26,7 @@ def convertir_entero_no_negativo(texto):# Convierte a entero >= 0, devolviendo (
 # Patrón para validar nombres (letras con acentos/ñ, espacios, guiones y apóstrofes internos).
 PATRON_NOMBRE = r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+(?:[ '\-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*" 
 
-def nombre_valido(texto):# Valido que el nombre sea legible, sin símbolos raros, y con longitud razonable.
+def nombre_valido(texto):# Validar que el nombre sea legible, sin símbolos raros, y con longitud razonable.
     if texto is None:
         return False
     t = " ".join(str(texto).strip().split()) # Normalizar espacios
@@ -186,7 +186,7 @@ def clave_superficie(p):
     return p["superficie"]
 
 def ordenar_paises(paises, por, descendente=False):
-    # Elijo la función criterio según el campo pedido.
+    # Eligir la función a criterio del campo pedido.
     clave_str = por.lower().strip()
     if clave_str == "poblacion":
         criterio_orden = clave_poblacion
@@ -347,7 +347,7 @@ def menu():
 
         elif opcion == "5":
             print("Ordenar por: a) nombre  b) población  c) superficie")
-            sub = input("Elegí a/b/c: ").strip().lower()
+            sub = input("Elija a/b/c: ").strip().lower()
             if sub == "b":
                 clave = "poblacion"
             elif sub == "c":
